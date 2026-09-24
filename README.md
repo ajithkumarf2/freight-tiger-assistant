@@ -27,7 +27,7 @@ The system enforces a **strict architectural separation**: all mathematical calc
 graph TD
     A["Raw Shipment Records (data/shipment_records.csv)"] --> STEP2["Step 2: Deterministic Metrics Engine<br/>• Weekly CPTK = SUM(Cost)/SUM(Qty*Dist)<br/>• Trailing 8-week Own History Baseline<br/>• Same-week Peer Baseline by Route Type"]
     STEP2 --> STEP3["Step 3: Anomaly Candidate Detector<br/>• vs_own >= +20% OR vs_peer >= +20%<br/>• Implementation Assumption: ANOMALY_THRESHOLD = 0.20"]
-    STEP3 --> STEP4["Step 4: Evidence Validation Engine<br/>• Route & Temporal Overlap Matching<br/>• Rejects Distractor Notes (N004-N010)<br/>• N003 Magnitude Guardrail (<= 7%)"]
+    STEP3 --> STEP4["Step 4: Evidence Validation Engine<br/>• Route & Temporal Overlap Matching<br/>• Rejects Distractor Notes (N004-N010)<br/>• N003 Stated Magnitude Compatibility Check"]
     STEP4 --> STEP5["Step 5: Grounded LLM Explainer<br/>• Prompts LLM ONLY with Validated Evidence<br/>• System Prompt Injection Defense<br/>• Logs Tokens & USD Cost per Call"]
     STEP5 --> STEP6["Step 6: Output Generator<br/>• Formats exact 8-column schema<br/>• CSV safety (escapes commas in reasons)<br/>• Saves output/final_output.csv"]
 ```
@@ -41,13 +41,13 @@ graph TD
    - The case study specifies that a route should be flagged when its cost is rising and looks out of the ordinary compared with its own history or similar routes.
    - The threshold remains fully configurable in `src/config.py` and is decoupled from core calculation engines.
 
-2. **N003 Magnitude Guardrail (5–7%)**:
-   - `N003` documents an $\approx 5\text{--}7\%$ nationwide diesel price cost impact.
-   - The Step 4 evidence layer evaluates whether the observed anomaly magnitude is compatible with `N003`. If the observed increase materially exceeds 5–7% (e.g., a 20%+ spike), `N003` is **deterministically rejected** as an insufficient justification.
+2. **N003 Stated Magnitude Compatibility**:
+   - `N003` describes an approximately 5–7% transportation-cost effect. It cannot automatically justify a substantially larger observed anomaly.
+   - The Step 4 evidence validator checks whether the observed increase is compatible with the note's stated magnitude.
 
 3. **Context Note Guardrails & Rejections**:
    - `N001`, `N002`: Potentially cost-impacting (require route + temporal window match).
-   - `N003`: Potentially cost-impacting (requires route/scope + temporal match + magnitude $\le 7\%$).
+   - `N003`: Potentially cost-impacting (requires route/scope + temporal match + stated magnitude compatibility).
    - `N004`, `N005`, `N006`, `N007`, `N008`, `N009`, `N010`: **MUST NOT** be treated as cost-rise justifications (distractors, non-impacting maintenance, status quo, or recovery notes).
 
 ---
@@ -166,7 +166,7 @@ REPRODUCIBILITY CHECK PASSED: All 7 deterministic fields are 100% IDENTICAL acro
 
 ## 🎯 Sample Output Validation
 
-Excerpt from generated [`output/final_output.csv`](file:///C:/Users/Ajithkumar/.gemini/antigravity-ide/scratch/freight-tiger-assistant/output/final_output.csv):
+Excerpt from generated [`output/final_output.csv`](output/final_output.csv):
 
 ```csv
 route,week_of,cost_per_tonne_km,vs_own_history,vs_similar_routes,flagged,matched_note_id,reason
