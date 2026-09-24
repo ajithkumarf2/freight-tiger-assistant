@@ -1,13 +1,22 @@
-import pandas as pd
-import numpy as np
+"""
+Exploratory data inspection utility for the FreightTiger case study.
 
-shipment_path = r"C:\Users\Ajithkumar\.gemini\antigravity-ide\scratch\freight-tiger-assistant\data\shipment_records.csv"
-notes_path = r"C:\Users\Ajithkumar\.gemini\antigravity-ide\scratch\freight-tiger-assistant\data\context_notes.csv"
-sample_out_path = r"C:\Users\Ajithkumar\.gemini\antigravity-ide\scratch\freight-tiger-assistant\data\sample_output_format_v2.csv"
+This script performs lightweight exploratory analysis on input datasets and output contracts.
+The production pipeline is implemented in src/ and executed through run_pipeline.py.
+"""
+
+from pathlib import Path
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+DATA_DIR = ROOT / "data"
+
+shipment_path = DATA_DIR / "shipment_records.csv"
+notes_path = DATA_DIR / "context_notes.csv"
+sample_out_path = DATA_DIR / "sample_output_format_v2.csv"
 
 df_ship = pd.read_csv(shipment_path)
 df_notes = pd.read_csv(notes_path)
-df_sample = pd.read_csv(sample_out_path)
 
 print("=== 1. SHIPMENT DATASET ANALYSIS ===")
 print("Columns:", list(df_ship.columns))
@@ -41,6 +50,15 @@ for idx, row in df_notes.iterrows():
     print(f"   Text: {row['note']}")
 
 print("\n=== 3. OUTPUT CONTRACT ANALYSIS ===")
-print("Sample Columns:", list(df_sample.columns))
-print("Sample Shape:", df_sample.shape)
-print("Sample Data:\n", df_sample)
+try:
+    df_sample = pd.read_csv(sample_out_path)
+    print("Sample Columns:", list(df_sample.columns))
+    print("Sample Shape:", df_sample.shape)
+    print("Sample Data:\n", df_sample)
+except Exception:
+    with open(sample_out_path, "r", encoding="utf-8") as f:
+        sample_content = f.read()
+    print(f"Sample File Path: {sample_out_path}")
+    print("Sample Output Raw Content:\n", sample_content.strip())
+
+
