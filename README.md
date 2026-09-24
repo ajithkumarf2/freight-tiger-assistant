@@ -175,3 +175,5 @@ Chennai-Bangalore,2025-02-24,3.58,+31.5% vs this route's past average,+38.7% vs 
 Delhi-Jaipur,2024-11-11,4.17,+35.5% vs this route's past average,+21.0% vs similar-length routes this week,Yes,,No valid supporting note was found for this route and time period. The cost rise remains unexplained and should be reviewed.
 Mumbai-Pune,2025-09-15,3.98,+9.2% vs this route's past average,+23.6% vs similar-length routes this week,Yes,,No valid supporting note was found for this route and time period. The cost rise remains unexplained and should be reviewed.
 ```
+<!-- Submission Release: 2026-09-24 -->
+
