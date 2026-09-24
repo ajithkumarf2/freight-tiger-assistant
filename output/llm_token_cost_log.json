@@ -1,0 +1,169 @@
+{
+  "total_llm_calls": 20,
+  "total_input_tokens": 3000,
+  "total_output_tokens": 700,
+  "total_tokens": 3700,
+  "total_estimated_cost_usd": 0.0,
+  "logs": [
+    {
+      "timestamp": "2026-09-24T04:04:01.780530+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.781567+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.782542+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.783460+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.784410+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.785557+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.787858+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.788914+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.789813+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.790679+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.791552+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.792554+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.795218+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.796847+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.797795+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.798672+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.799518+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.800379+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.801233+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "timestamp": "2026-09-24T04:04:01.802943+00:00",
+      "model": "gpt-4o-mini-fallback",
+      "input_tokens": 150,
+      "output_tokens": 35,
+      "total_tokens": 185,
+      "estimated_cost_usd": 0.0
+    }
+  ]
+}
